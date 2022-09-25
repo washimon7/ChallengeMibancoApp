@@ -1,45 +1,19 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { HomeScreen } from '../screens';
+import { HomeScreen, SignInScreen } from '../screens';
 import { RootDrawerParamList } from '../types/mainTypes';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { CustomDrawer } from '../components/CustomDrawer';
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 export const RootNavigation = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        drawerItemStyle: {
-          justifyContent: 'space-between',
-        },
-        drawerStyle: {
-          backgroundColor: 'yellow',
-        },
-      }}
-      drawerContent={() => (
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: 'orange',
-            justifyContent: 'space-between',
-          }}
-        >
-          <View style={{ flexDirection: 'column' }}>
-            <Text>OpCIONES</Text>
-          </View>
-          <Text>OpCIONES</Text>
-        </View>
-      )}
+      initialRouteName="Transferencia"
+      drawerContent={props => <CustomDrawer {...props} />}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen
-        name="Exit"
-        component={() => <Text>Saliste</Text>}
-        options={{
-          drawerItemStyle: {},
-        }}
-      />
+      <Drawer.Screen name="Transferencia" component={HomeScreen} />
+      <Drawer.Screen name="Salir" component={SignInScreen} />
     </Drawer.Navigator>
   );
 };
