@@ -1,8 +1,15 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { DrawerScreenProps } from '@react-navigation/drawer';
+
+export type RootDrawerParamList = {
+  Home: undefined;
+  Exit: undefined;
+};
 
 export type RootStackParamList = {
   SignIn: undefined;
-  Home: undefined;
+  Root: undefined;
 };
 
-export type Props = NativeStackScreenProps<RootStackParamList>;
+export type StackProps = NativeStackScreenProps<RootStackParamList>;
+export type DrawerProps = DrawerScreenProps<RootDrawerParamList>;

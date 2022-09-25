@@ -1,16 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SignInScreen } from '../screens';
 import { RootStackParamList } from '../types/mainTypes';
-import { HomeScreen, SignInScreen } from '../screens';
+import { RootNavigation } from './RootNavigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const MainNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Root"
+          component={RootNavigation}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

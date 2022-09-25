@@ -1,7 +1,7 @@
 import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
-import { Props } from '../../../types/mainTypes';
+import { DrawerProps } from '../../../types/mainTypes';
 
-export const HomeScreen = ({ navigation }: Props) => {
+export const HomeScreen = ({ navigation }: DrawerProps) => {
   const goToSignIn = () => {
     navigation.navigate('SignIn');
   };
