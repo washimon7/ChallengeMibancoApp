@@ -6,7 +6,10 @@ type AuthState = {
 };
 
 const initialState: AuthState = {
-  loggedInUser: null,
+  loggedInUser: {
+    username: 'washimon7',
+    clientName: 'Miguel Coila',
+  },
 };
 
 export const authSlice = createSlice({

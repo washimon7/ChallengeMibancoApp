@@ -1,9 +1,15 @@
-import { Text, View } from 'react-native';
+import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { useAppSelector } from '../../../app/hooks';
 
 export const SignInScreen = () => {
+  const { loggedInUser } = useAppSelector(state => state.auth);
+
   return (
-    <View>
-      <Text>Inicia Sesión</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <Text>Inicia Sesión</Text>
+        {loggedInUser && <Text>{loggedInUser.clientName}</Text>}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
