@@ -5,6 +5,8 @@ type AuthState = {
   signedInUser: User | null;
   isSigningIn: boolean;
   isSigningOut: boolean;
+  justSignedOut: boolean;
+  justSignedIn: boolean;
 };
 
 const initialState: AuthState = {
@@ -12,6 +14,10 @@ const initialState: AuthState = {
     username: 'washimon7',
     clientName: 'Miguel Coila',
   },
+  isSigningIn: false,
+  isSigningOut: false,
+  justSignedOut: false,
+  justSignedIn: true,
 };
 
 export const authSlice = createSlice({
@@ -30,10 +36,28 @@ export const authSlice = createSlice({
     setIsSigningOut: (state: AuthState, action: PayloadAction<boolean>) => {
       state.isSigningOut = action.payload;
     },
+    signedOutSuccessfully: (
+      state: AuthState,
+      action: PayloadAction<boolean>,
+    ) => {
+      state.justSignedOut = action.payload;
+    },
+    signedInSuccessfully: (
+      state: AuthState,
+      action: PayloadAction<boolean>,
+    ) => {
+      state.justSignedIn = action.payload;
+    },
   },
 });
 
-export const { signedIn, signedOut, setIsSigningIn, setIsSigningOut } =
-  authSlice.actions;
+export const {
+  signedIn,
+  signedOut,
+  setIsSigningIn,
+  setIsSigningOut,
+  signedOutSuccessfully,
+  signedInSuccessfully,
+} = authSlice.actions;
 
 export default authSlice.reducer;

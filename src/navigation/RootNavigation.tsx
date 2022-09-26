@@ -16,9 +16,14 @@ const Drawer = createDrawerNavigator<RootDrawerParamList>();
 export const RootNavigation = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Transferencia"
+      initialRouteName="SignIn"
       drawerContent={props => <CustomDrawer {...props} />}
     >
+      <Drawer.Screen
+        name="SignIn"
+        component={SignInScreen}
+        options={{ headerShown: false }}
+      />
       <Drawer.Screen
         name="Transferencia"
         component={HomeScreen}
@@ -55,11 +60,6 @@ export const RootNavigation = () => {
       <Drawer.Screen
         name="Salir"
         component={SignOutScreen}
-        options={{ headerShown: false }}
-      />
-      <Drawer.Screen
-        name="SignIn"
-        component={SignInScreen}
         options={{ headerShown: false }}
       />
     </Drawer.Navigator>

@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SignInScreen } from '../screens';
+// import { SignInScreen } from '../screens';
 import { RootStackParamList } from '../types/mainTypes';
 import { RootNavigation } from './RootNavigation';
 
@@ -15,7 +15,7 @@ export const MainNavigation = () => {
           component={RootNavigation}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="SignIn" component={SignInScreen} />
+        {/* <Stack.Screen name="SignIn" component={SignInScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,3 +13,8 @@ export type TransferForm = {
   cellphoneNumber: string;
   amount: string;
 };
+
+export type UserForm = {
+  username: string;
+  password: string;
+};
