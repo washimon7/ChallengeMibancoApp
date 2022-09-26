@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Transfer } from '../../../types/index';
+import { Transfer, TransferResponse } from '../../../types/index';
 
 type TransfersState = {
   lastTransfers: Transfer[];
   isGettingLastTransfers: boolean;
   isTransfering: boolean;
   justTransfered: boolean;
+  transferResponse: TransferResponse | null;
 };
 
 const initialState: TransfersState = {
@@ -13,6 +14,7 @@ const initialState: TransfersState = {
   isGettingLastTransfers: false,
   isTransfering: false,
   justTransfered: false,
+  transferResponse: null,
 };
 
 export const transfersSlice = createSlice({
@@ -37,6 +39,12 @@ export const transfersSlice = createSlice({
     ) => {
       state.isTransfering = action.payload;
     },
+    gotTransferResponse: (
+      state: TransfersState,
+      action: PayloadAction<TransferResponse>,
+    ) => {
+      state.transferResponse = action.payload;
+    },
     transferedSuccessfully: (
       state: TransfersState,
       action: PayloadAction<boolean>,
@@ -51,6 +59,7 @@ export const {
   setIsGettingLastTransfers,
   setIsTransfering,
   transferedSuccessfully,
+  gotTransferResponse,
 } = transfersSlice.actions;
 
 export default transfersSlice.reducer;

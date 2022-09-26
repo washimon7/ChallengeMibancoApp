@@ -18,3 +18,8 @@ export type UserForm = {
   username: string;
   password: string;
 };
+
+export type TransferResponse = {
+  operacion: number;
+  mensaje: string;
+};

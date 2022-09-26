@@ -2,8 +2,11 @@ import { View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 import { COLORS } from '../../../constants/index';
 import { DrawerProps } from '../../../types/mainTypes';
+import { useJustTransfered } from '../../../hooks/transfers/useJustTransfered';
 
-export const JustTransferedScreen = ({ navigation }: DrawerProps) => {
+export const JustTransferedScreen = (props: DrawerProps) => {
+  const { transferResponse, goToTransferencia } = useJustTransfered(props);
+
   return (
     <View
       style={{
@@ -21,10 +24,20 @@ export const JustTransferedScreen = ({ navigation }: DrawerProps) => {
           marginBottom: 24,
         }}
       >
-        Se transfirió correctamente
+        {`Operación ${transferResponse?.operacion}`}
+      </Text>
+      <Text
+        style={{
+          fontSize: 18,
+          fontWeight: '500',
+          color: COLORS.textColor3,
+          marginBottom: 24,
+        }}
+      >
+        {transferResponse?.mensaje}
       </Text>
       <Button
-        onPress={() => navigation.jumpTo('Transferencia')}
+        onPress={goToTransferencia}
         color={COLORS.primaryColor}
         mode="outlined"
       >

@@ -7,6 +7,7 @@ export type RootDrawerParamList = {
   Salir: undefined;
   JustTransfered: undefined;
   SignIn: undefined;
+  RecargaCelular: undefined;
 };
 
 export type RootStackParamList = {

@@ -62,6 +62,11 @@ export const RootNavigation = () => {
         component={SignOutScreen}
         options={{ headerShown: false }}
       />
+      <Drawer.Screen
+        name="RecargaCelular"
+        component={TransferScreen}
+        options={{ headerShown: false }}
+      />
     </Drawer.Navigator>
   );
 };
