@@ -1,5 +1,9 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 export const SignOutScreen = () => {
-  return <View>Saliendo</View>;
+  return (
+    <View>
+      <Text>Saliendo</Text>
+    </View>
+  );
 };

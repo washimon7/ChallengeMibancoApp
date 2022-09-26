@@ -1,7 +1,8 @@
 export const COLORS = {
   primaryColor: '#00a650',
-  secondaryColor: '#00a650',
+  secondaryColor: '#a60056',
   accentColor: '#fff200',
+  accentMonoColor: '#fff64d',
   textColor1: '#181818',
   textColor2: '#282828',
   textColor3: '#444444',

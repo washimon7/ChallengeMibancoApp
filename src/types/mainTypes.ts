@@ -3,6 +3,7 @@ import { DrawerScreenProps } from '@react-navigation/drawer';
 
 export type RootDrawerParamList = {
   Transferencia: undefined;
+  Transfer: undefined;
   Salir: undefined;
 };
 

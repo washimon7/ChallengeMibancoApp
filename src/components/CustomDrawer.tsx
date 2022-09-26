@@ -1,7 +1,7 @@
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { DrawerActions } from '@react-navigation/native';
 import { View, Text } from 'react-native';
-import { Button, Colors } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../constants/index';
 
@@ -38,7 +38,7 @@ export const CustomDrawer = ({
           </Text>
         </View>
         {state.routes
-          .filter(route => route.name !== 'Salir')
+          .filter(route => route.name !== 'Salir' && route.name !== 'Transfer')
           .map(route => (
             <Button
               onPress={() => jumpToRoute(route)}
@@ -52,6 +52,7 @@ export const CustomDrawer = ({
                 />
               )}
               uppercase={false}
+              key={route.name}
             >
               <Text style={{ color: COLORS.textColor1, fontSize: 15 }}>
                 {route.name}
