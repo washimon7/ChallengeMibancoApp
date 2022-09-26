@@ -4,6 +4,7 @@ import {
   SignOutScreen,
   TransferScreen,
   JustTransferedScreen,
+  SignInScreen,
 } from '../screens';
 import { RootDrawerParamList } from '../types/mainTypes';
 import { CustomDrawer } from '../components/CustomDrawer';
@@ -54,6 +55,11 @@ export const RootNavigation = () => {
       <Drawer.Screen
         name="Salir"
         component={SignOutScreen}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name="SignIn"
+        component={SignInScreen}
         options={{ headerShown: false }}
       />
     </Drawer.Navigator>

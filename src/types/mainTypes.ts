@@ -6,6 +6,7 @@ export type RootDrawerParamList = {
   Transfer: undefined;
   Salir: undefined;
   JustTransfered: undefined;
+  SignIn: undefined;
 };
 
 export type RootStackParamList = {

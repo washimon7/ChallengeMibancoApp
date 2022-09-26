@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User } from '../../../types';
 
 type AuthState = {
-  loggedInUser: User | null;
+  signedInUser: User | null;
+  isSigningIn: boolean;
+  isSigningOut: boolean;
 };
 
 const initialState: AuthState = {
-  loggedInUser: {
+  signedInUser: {
     username: 'washimon7',
     clientName: 'Miguel Coila',
   },
@@ -16,12 +18,22 @@ export const authSlice = createSlice({
   initialState: initialState,
   name: 'auth',
   reducers: {
-    loggedIn: (state: AuthState, action: PayloadAction<User>) => {
-      state.loggedInUser = action.payload;
+    signedIn: (state: AuthState, action: PayloadAction<User>) => {
+      state.signedInUser = action.payload;
+    },
+    signedOut: (state: AuthState) => {
+      state.signedInUser = null;
+    },
+    setIsSigningIn: (state: AuthState, action: PayloadAction<boolean>) => {
+      state.isSigningIn = action.payload;
+    },
+    setIsSigningOut: (state: AuthState, action: PayloadAction<boolean>) => {
+      state.isSigningOut = action.payload;
     },
   },
 });
 
-export const { loggedIn } = authSlice.actions;
+export const { signedIn, signedOut, setIsSigningIn, setIsSigningOut } =
+  authSlice.actions;
 
 export default authSlice.reducer;
