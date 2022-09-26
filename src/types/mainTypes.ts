@@ -5,6 +5,7 @@ export type RootDrawerParamList = {
   Transferencia: undefined;
   Transfer: undefined;
   Salir: undefined;
+  JustTransfered: undefined;
 };
 
 export type RootStackParamList = {

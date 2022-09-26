@@ -4,11 +4,15 @@ import { Transfer } from '../../../types/index';
 type TransfersState = {
   lastTransfers: Transfer[];
   isGettingLastTransfers: boolean;
+  isTransfering: boolean;
+  justTransfered: boolean;
 };
 
 const initialState: TransfersState = {
   lastTransfers: [],
   isGettingLastTransfers: false,
+  isTransfering: false,
+  justTransfered: false,
 };
 
 export const transfersSlice = createSlice({
@@ -27,10 +31,26 @@ export const transfersSlice = createSlice({
     ) => {
       state.isGettingLastTransfers = action.payload;
     },
+    setIsTransfering: (
+      state: TransfersState,
+      action: PayloadAction<boolean>,
+    ) => {
+      state.isTransfering = action.payload;
+    },
+    transferedSuccessfully: (
+      state: TransfersState,
+      action: PayloadAction<boolean>,
+    ) => {
+      state.justTransfered = action.payload;
+    },
   },
 });
 
-export const { gotLastTransfers, setIsGettingLastTransfers } =
-  transfersSlice.actions;
+export const {
+  gotLastTransfers,
+  setIsGettingLastTransfers,
+  setIsTransfering,
+  transferedSuccessfully,
+} = transfersSlice.actions;
 
 export default transfersSlice.reducer;

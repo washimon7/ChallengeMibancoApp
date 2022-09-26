@@ -38,7 +38,12 @@ export const CustomDrawer = ({
           </Text>
         </View>
         {state.routes
-          .filter(route => route.name !== 'Salir' && route.name !== 'Transfer')
+          .filter(
+            route =>
+              route.name !== 'Salir' &&
+              route.name !== 'Transfer' &&
+              route.name !== 'JustTransfered',
+          )
           .map(route => (
             <Button
               onPress={() => jumpToRoute(route)}

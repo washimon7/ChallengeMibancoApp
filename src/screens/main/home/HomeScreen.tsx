@@ -2,10 +2,10 @@ import { Text, TouchableOpacity, View } from 'react-native';
 import { DrawerProps } from '../../../types/mainTypes';
 import { COLORS } from '../../../constants/index';
 import { HomeButtons } from '../../../components/HomeButtons';
-import { useGetTransfers } from '../../../hooks/auth/useGetTransfers';
+import { useGetTransfers } from '../../../hooks/transfers/useGetTransfers';
 import { FlatList } from 'react-native-gesture-handler';
 import { Transfer } from '../../../types/index';
-import { getNameInitials } from '../../../utils/index';
+import { getNameInitials } from '../../../utils';
 
 export const HomeScreen = (props: DrawerProps) => {
   const { lastTransfers, isGettingLastTransfers } = useGetTransfers();

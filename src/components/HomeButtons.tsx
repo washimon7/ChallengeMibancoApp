@@ -2,6 +2,7 @@ import { TouchableHighlight, View, Text } from 'react-native';
 import { COLORS } from '../constants/index';
 import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { DrawerProps } from '../types/mainTypes';
+
 export const HomeButtons = ({ navigation }: DrawerProps) => {
   const goToTransfer = () => {
     navigation.navigate('Transfer');
@@ -24,7 +25,7 @@ export const HomeButtons = ({ navigation }: DrawerProps) => {
           display: 'flex',
           flex: 1,
           paddingHorizontal: 16,
-          paddingVertical: 8,
+          paddingVertical: 12,
           borderRadius: 8,
           borderWidth: 1,
           borderColor: COLORS.primaryColor,
@@ -58,7 +59,7 @@ export const HomeButtons = ({ navigation }: DrawerProps) => {
           display: 'flex',
           flex: 1,
           paddingHorizontal: 16,
-          paddingVertical: 8,
+          paddingVertical: 12,
           borderRadius: 8,
           backgroundColor: COLORS.accentColor,
         }}

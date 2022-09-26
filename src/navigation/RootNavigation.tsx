@@ -1,5 +1,10 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { HomeScreen, SignOutScreen, TransferScreen } from '../screens';
+import {
+  HomeScreen,
+  SignOutScreen,
+  TransferScreen,
+  JustTransferedScreen,
+} from '../screens';
 import { RootDrawerParamList } from '../types/mainTypes';
 import { CustomDrawer } from '../components/CustomDrawer';
 import { COLORS } from '../constants/index';
@@ -35,6 +40,15 @@ export const RootNavigation = () => {
           headerTintColor: COLORS.textColor1,
           headerTitle: 'Transferir',
           headerTitleStyle: { fontSize: 16 },
+          headerLeft: () => null,
+          headerTitleAlign: 'center',
+        }}
+      />
+      <Drawer.Screen
+        name="JustTransfered"
+        component={JustTransferedScreen}
+        options={{
+          headerShown: false,
         }}
       />
       <Drawer.Screen

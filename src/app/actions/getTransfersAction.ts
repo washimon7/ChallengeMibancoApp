@@ -26,7 +26,7 @@ export const getTransfersAction = (): ThunkAction<
 
         dispatch(gotLastTransfers(transfers));
       }
-      console.log({ decodedData });
+      // console.log({ decodedData });
     } catch (error) {
       console.error(error);
     } finally {

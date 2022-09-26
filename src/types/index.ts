@@ -8,3 +8,8 @@ export type Transfer = {
   monto: number;
   fechaoperacion: string;
 };
+
+export type TransferForm = {
+  cellphoneNumber: string;
+  amount: string;
+};
